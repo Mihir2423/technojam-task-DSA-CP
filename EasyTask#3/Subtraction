@@ -1,0 +1,12 @@
+a = int(input())
+k = int(input())
+p = 0
+while k != 0:
+    t = a % 10
+    if t == 0:
+        p = a / 10
+    else:
+        p = a - 1
+    a = p
+    k = k - 1
+print(p)
