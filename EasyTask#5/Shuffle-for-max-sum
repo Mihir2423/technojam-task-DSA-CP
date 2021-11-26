@@ -1,0 +1,29 @@
+import numpy as np
+t = int(input())
+lst = []
+maxim = 0
+while t != 0:
+    n = int(input())
+    arr = []
+    for i in range(0, n):
+        ele = int(input())
+        arr.append(ele)
+    c = n
+    maxim = 0
+    while c != 0:
+        np.random.shuffle(arr)
+        arr1 = []
+        for i in range(0, n):
+            ele = (arr[i] + (i + 1)) % 2
+            arr1.append(ele)
+        add = 0
+        for i in arr1:
+            add = add + i
+        if add > maxim:
+            maxim = add
+        c = c - 1
+    lst.append(maxim)
+
+    t = t - 1
+for i in lst:
+    print(i)
