@@ -1,0 +1,13 @@
+t = int(input())
+arr = []
+while t != 0:
+    c = 0
+    n = int(input())
+    for i in range(0, pow(2, n)-1):
+        if i ^ (i + 1) == (i + 2) ^ (i + 3):
+            c = c + 1
+    c = c % (pow(10, 9) + 7)
+    arr.append(c)
+    t = t - 1
+for i in arr:
+    print(i)
