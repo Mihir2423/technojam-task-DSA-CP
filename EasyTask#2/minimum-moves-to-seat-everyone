@@ -1,0 +1,13 @@
+n = int(input())
+seats = []
+students = []
+moves = 0
+for i in range(n):
+    seats.append(int(input()))
+for i in range(n):
+    students.append(int(input()))
+seats.sort()
+students.sort()
+for a, b in zip(seats, students):
+    moves = moves + abs(a - b)
+print(moves)
