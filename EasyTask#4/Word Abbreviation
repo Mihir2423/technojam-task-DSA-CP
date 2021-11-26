@@ -1,0 +1,12 @@
+n = int(input())
+lst = []
+for i in range(0, n):
+    ele = input()
+    lst.append(ele)
+for i in lst:
+    if len(i) > 10:
+        f = i[0]
+        l = i[-1]
+        print(f"{f}{len(i) -2}{l}")
+    else:
+        print(i)
