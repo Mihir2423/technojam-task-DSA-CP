@@ -1,0 +1,47 @@
+package com.codewithmihir;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int m = in.nextInt();
+        int a [][] = new int[n][m];
+        int i, j;
+        int right, right_up, right_down;
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                a[i][j] = in.nextInt();
+            }
+        }
+        for(i=0;i<n;i++){
+            for(j=m-2;j>=0;j--){
+                right = a[i][j+1];
+                if(a[i][j] == a[0][j]){
+                    right_up = 0;
+                }
+                else{
+                    right_up = a[i-1][j+1];
+                }
+                if(a[i][j] == a[n-1][j]){
+                    right_down = 0;
+                }
+                else
+                {
+                    right_down = a[i+1][j+1];
+                }
+                a[i][j] = a[i][j] + Math.max(right, Math.max(right_up, right_down));
+            }
+        }
+        int max = 0;
+        for(i=0;i<n;i++){
+            if(a[i][0]>max){
+                max = a[i][0];
+            }
+        }
+        System.out.println(max);
+    }
+}
